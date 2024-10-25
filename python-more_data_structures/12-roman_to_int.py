@@ -18,10 +18,8 @@ def roman_to_int(roman_string):
 
     for i in range(length):
         value = roman_numerals[roman_string[i]]
-        # Check if the next numeral exists and is greater than the current numeral
         if i + 1 < length and roman_numerals[roman_string[i + 1]] > value:
             total -= value  # Subtract if the next numeral is greater
         else:
             total += value  # Add otherwise
-
     return total
