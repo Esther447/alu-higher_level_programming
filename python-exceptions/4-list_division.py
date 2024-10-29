@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def list_divion(my_list_1, my_list_2, list_length):
+def list_disivion(my_list_1, my_list_2, list_length):
     resulr = []
     for i in range(list_length):
         try:
