@@ -6,7 +6,8 @@ its area and print the square using a specified character,
 with consideration for its position.
 """
 
-class Square:
+
+lass Square:
     """Class that defines a square by its size and position.
 
     Attributes:
