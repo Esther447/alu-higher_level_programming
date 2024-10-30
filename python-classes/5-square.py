@@ -5,6 +5,7 @@ This module provides a Square class with methods to calculate
 its area and print the square using a specified character.
 """
 
+
 class Square:
     """Class that defines a square by its size.
 
