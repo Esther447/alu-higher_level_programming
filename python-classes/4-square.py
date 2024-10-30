@@ -12,7 +12,7 @@ class Square:
     """
 
 
-    def __init__(self, size=0):
+def __init__(self, size=0):
         """
 
         Initializes the square with a given size.
@@ -20,7 +20,7 @@ class Square:
 
         Args:
              size (int): The size of the square, default is 0.
-        
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
@@ -31,7 +31,7 @@ class Square:
     def size(self):
         """
         Retrieves the size of the square.
-        
+
         Returns:
             int: The size of the square.
         """
@@ -41,10 +41,10 @@ class Square:
     def size(self, value):
         """
         Sets the size of the square, with validation.
-        
+
         Args:
             value (int): The size of the square.
-        
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
@@ -58,7 +58,7 @@ class Square:
     def area(self):
         """
         Calculates and returns the area of the square.
-        
+
         Returns:
             int: The area of the square.
         """
