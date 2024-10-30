@@ -4,6 +4,7 @@ This module defines a Square class with a private instance attribute
 and size validation.
 """
 
+
 class Square:
     """
     A class that represents a square.
