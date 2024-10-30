@@ -7,7 +7,7 @@ with consideration for its position.
 """
 
 
-lass Square:
+class Square:
     """Class that defines a square by its size and position.
 
     Attributes:
