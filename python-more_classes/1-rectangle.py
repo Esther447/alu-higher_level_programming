@@ -4,9 +4,10 @@
 This module defines a rectangle class with and height attributes.
 """
 
+
 class Rectangle:
     """A class that defines a rectangle by width and height."""
-    
+
     def __init__(self, width=0, height=0):
         """Initialize the rectangle with optional width and height."""
         self.width = width
