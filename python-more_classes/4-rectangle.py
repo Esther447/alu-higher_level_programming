@@ -3,9 +3,9 @@
 4-rectangle.py
 
 This module defines the Rectangle class, which models a rectangle's dimensions
-and calculates its area and perimeter. The Rectangle class includes data validation
+and calculates its area and perimeter. Rectangle class includes data validation
 to ensure that the width and height are non-negative integers. It also provides
-string representations for visual output and for recreating instances using eval().
+string representations for visual output for recreating instances using eval().
 
 Classes:
     Rectangle: A class that defines a rectangle by its width and height.
@@ -18,9 +18,10 @@ Rectangle class:
     Methods:
         area(): Returns the area of the rectangle.
         perimeter(): Returns the perimeter of the rectangle.
-        __str__(): Returns a string representation of the rectangle using '#' characters.
-        __repr__(): Returns a string representation to recreate the rectangle instance.
+        __str__(): Returns a string representation of rectangle using '#' characters.
+        __repr__(): Returns a string representation to recreate rectangle instance.
 """
+
 
 class Rectangle:
     """Represents a rectangle with width and height."""
@@ -91,7 +92,7 @@ class Rectangle:
         """Return the perimeter of the rectangle.
 
         Returns:
-            int: The perimeter of the rectangle. Returns 0 if width or height is 0.
+            int: Perimeter of rectangle. Returns 0 if width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
@@ -112,6 +113,6 @@ class Rectangle:
         """Return a string representation of the rectangle to recreate the instance.
 
         Returns:
-            str: A string that can be used with eval() to recreate the rectangle.
+            str: A string that can be used with eval() to recreate rectangle.
         """
         return f"Rectangle({self.__width}, {self.__height})"
