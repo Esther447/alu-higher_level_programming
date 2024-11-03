@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class with private attributes for width and
-height. It includes methods to calculate the area and perimeter of the rectangle.
-Property setters and getters validate the values, and a custom __str__ method
-prints the rectangle with the character #.
-"""
+3-rectangle.py
 
+This module defines the Rectangle class, which represents a rectangle with
+attributes for width and height. It provides methods to calculate the area
+and perimeter of the rectangle, as well as a way to visually represent it
+using the '#' character. The class ensures that the dimensions are valid
+integers and non-negative.
+
+Classes:
+    Rectangle: Represents a rectangle.
+"""
 
 class Rectangle:
     """Represents a rectangle."""
