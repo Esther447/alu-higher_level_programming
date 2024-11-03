@@ -2,14 +2,23 @@
 """
 3-rectangle.py
 
-This module defines the Rectangle class, which represents a rectangle with
-attributes for width and height. It provides methods to calculate the area
-and perimeter of the rectangle, as well as a way to visually represent it 
-using the '#' character. The class ensures that the dimensions are valid 
-integers and non-negative.
+This module defines the Rectangle class, which models a rectangle's dimensions
+and calculates its area and perimeter. The Rectangle class includes data validation
+to ensure that the width and height are non-negative integers. It also provides a
+string representation of the rectangle using the '#' character for visual representation.
 
 Classes:
-    Rectangle: Represents a rectangle.
+    Rectangle: A class that defines a rectangle by its width and height.
+
+Rectangle class:
+    Attributes:
+        width (int): The width of the rectangle (default is 0).
+        height (int): The height of the rectangle (default is 0).
+
+    Methods:
+        area(): Returns the area of the rectangle.
+        perimeter(): Returns the perimeter of the rectangle.
+        __str__(): Returns a string representation of the rectangle using '#' characters.
 """
 
 class Rectangle:
