@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module defines a Rectangle class with attributes to store width and height
-and methods to calculate area and perimeter, as well as print and represent therectangle.
+and methods to calculate area and perimeter, Print and represent therectangle.
 It also tracks the number of instances of Rectangle
 """
 
