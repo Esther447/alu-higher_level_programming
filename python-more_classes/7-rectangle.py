@@ -12,7 +12,7 @@ Attributes:
 
 
 class Rectangle:
-    """Represents a rectangle with width and height, and tracks instances and print symbol."""
+    """Represents rectangle W and H, and tracks instances and print symbol."""
 
     number_of_instances = 0
     print_symbol = "#"
@@ -93,10 +93,10 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle with the character(s) stored in print_symbol.
+        Returns string represent rectangle W the charact store in print_symbol.
 
         Returns:
-            str: A string representing the rectangle, or an empty string if width or height is 0.
+            str: String representing rectangle,or empty string if w or h is 0.
         """
         if self.width == 0 or self.height == 0:
             return ""
@@ -104,7 +104,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Returns a string representation of the rectangle for reproduction by eval().
+        Returns a string represen of rectangle for reproduction by eval().
 
         Returns:
             str: A string in the format 'Rectangle(width, height)'.
@@ -112,6 +112,6 @@ class Rectangle:
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
-        """Prints a message when the rectangle instance is deleted and decrements instance counter."""
+        """Prints a message when the rectangle instance is deleted."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
