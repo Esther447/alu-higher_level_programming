@@ -11,13 +11,12 @@ printing and recreating instances using str() and repr(), and includes a class
 method to create square rectangles.
 """
 
-
 class Rectangle:
-    """Defines a rectangle with w & h attributes, along with various methods.
+    """Defines a rectangle with width and height attributes, along with various methods.
 
     Attributes:
         number_of_instances (int): Tracks the number of Rectangle instances.
-        print_symbol (str): Symbol used for string represent rectangle.
+        print_symbol (str): Symbol used for string representation of the rectangle.
     """
 
     number_of_instances = 0
@@ -100,11 +99,11 @@ class Rectangle:
         """Creates a string representation of the rectangle using the print_symbol.
 
         Returns:
-            str: String represent of the rectangle, empty string if w,h is 0
+            str: The string representation of the rectangle, or an empty string if width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
- return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
+        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """Returns a string representation of the rectangle for recreating the instance.
@@ -149,6 +148,6 @@ class Rectangle:
             size (int): The size of the rectangle's sides.
 
         Returns:
-        Rectangle: New Rectangle instance where w & h are equal to size.
+            Rectangle: A new Rectangle instance where width and height are equal to size.
         """
         return cls(size, size)
