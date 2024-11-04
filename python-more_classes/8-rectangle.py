@@ -1,4 +1,15 @@
 #!/usr/bin/python3
+"""
+This module defines a Rectangle class for representing rectangles.
+
+The Rectangle class includes private instance attributes for width and height,
+public class attributes to keep track of instances and customize print symbols,
+and methods for calculating area, perimeter, and comparing rectangles.
+
+The class also handles instance deletion with a custom message and supports
+printing and recreating instances using str() and repr().
+"""
+
 class Rectangle:
     """Defines a rectangle with width and height attributes, along with various methods.
 
