@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class with attributes to store width and height,
-and methods to calculate area and perimeter, as well as print and represent the rectangle.
-It also tracks the number of instances of Rectangle.
+This module defines a Rectangle class with attributes to store width and height
+and methods to calculate area and perimeter, as well as print and represent therectangle.
+It also tracks the number of instances of Rectangle
 """
+
 
 class Rectangle:
     """Represents a rectangle with width and height, and tracks instances."""
@@ -86,10 +87,9 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle with the character `#`.
-
+        Returns a string representation of the rectangle with the character `#`
         Returns:
-            str: A string representing the rectangle, or an empty string if width or height is 0.
+            str: String representing rectangle, or empty string if w or h is 0
         """
         if self.width == 0 or self.height == 0:
             return ""
@@ -97,7 +97,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Returns a string representation of the rectangle for reproduction by eval().
+        Returns String representation of rectangle for reproduction by eval().
 
         Returns:
             str: A string in the format 'Rectangle(width, height)'.
@@ -105,6 +105,6 @@ class Rectangle:
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
-        """Prints a message when the rectangle instance is deleted and decrements instance counter."""
+        """Prints a message when the rectangle instance is deleted."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
