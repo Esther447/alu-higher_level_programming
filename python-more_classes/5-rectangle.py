@@ -86,7 +86,7 @@ class Rectangle:
         Returns a string representation of the rectangle with '#'
 
         Returns:
-            str: String represent rectangle, or empty string if width or heighis 0
+            str: String represent rectangle, or empty string if W or H is 0
         """
         if self.width == 0 or self.height == 0:
             return ""
@@ -95,7 +95,7 @@ class Rectangle:
     def __repr__(self):
         """
         Returns string representation of rectangle for reproduction by eval().
-    
+
 
         Returns:
             str: A string in the format 'Rectangle(width, height)'.
