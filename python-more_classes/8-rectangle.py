@@ -10,12 +10,13 @@ The class also handles instance deletion with a custom message and supports
 printing and recreating instances using str() and repr().
 """
 
+
 class Rectangle:
-    """Defines a rectangle with width and height attributes, along with various methods.
+    """Defines rectangle with W & H attributes, along with various methods.
 
     Attributes:
-        number_of_instances (int): Tracks the number of Rectangle instances.
-        print_symbol (str): Symbol used for string representation of the rectangle.
+        number_of_instances (int): Tracks the no of Rectangle instances.
+        print_symbol (str): Symbol used for string representation of rectangle.
     """
 
     number_of_instances = 0
@@ -98,11 +99,12 @@ class Rectangle:
         """Creates a string representation of the rectangle using the print_symbol.
 
         Returns:
-            str: The string representation of the rectangle, or an empty string if width or height is 0.
+            str: String representation rectangle or empty string if W,H is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
+        return
+    "\n".join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """Returns a string representation of the rectangle for recreating the instance.
@@ -113,7 +115,7 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Called when a Rectangle instance is deleted. Decrements the instance counter and prints a message."""
+        """ Decrements the instance counter and prints a message."""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
