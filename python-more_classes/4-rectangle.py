@@ -18,8 +18,8 @@ Rectangle class:
     Methods:
         area(): Returns the area of the rectangle.
         perimeter(): Returns the perimeter of the rectangle.
-        __str__(): Returns a string representation of rectangle using '#' characters.
-        __repr__(): Returns a string representation to recreate rectangle instance.
+        __str__(): Returns a string reprngle using '#' characters.
+        __repr__(): resentation to recreate rectangle instance.
 """
 
 
