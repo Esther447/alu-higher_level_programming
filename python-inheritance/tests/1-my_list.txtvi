@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-1-my_list.py
+Module 1-my_list
 
 This module defines a class MyList that inherits from the built-in list class.
 It includes an additional method, print_sorted, which prints the list in
