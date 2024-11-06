@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""
+This module provides the MyList class, a subclass of the built-in list class.
+MyList includes a method to print the list in sorted order without modifying
+the original list.
+
+Classes:
+    - MyList: Extends the built-in list with a method to print a sorted version of the list.
+
+Usage example:
+    my_list = MyList()
+    my_list.append(3)
+    my_list.append(1)
+    my_list.append(2)
+    print("Original list:", my_list)  # Output: Original list: [3, 1, 2]
+    my_list.print_sorted()            # Output: [1, 2, 3]
+    print("After print_sorted:", my_list)  # Output: After print_sorted: [3, 1, 2]
+"""
+
+class MyList(list):
+    """A subclass of list with a method to print the list in sorted order."""
+
+    def print_sorted(self)
+        """Prints the list in ascending sorted order without modifying the original list."""
+        print(sorted(self))
