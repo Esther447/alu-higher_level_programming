@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+# Input:
+my_list = MyList()
+my_list.append(1)
+my_list.append(4)
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+print(my_list)          # Original list
+my_list.print_sorted()  # Sorted output
+print(my_list)       
