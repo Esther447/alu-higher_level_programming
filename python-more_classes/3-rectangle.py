@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class with width and height attributes.
-It provides methods to calculate the area and perimeter of the rectangle.
-It also includes a __str__ method to print the rectangle using the `#` character.
+This moduincludes a __str__ method to print the rectangle using the `#` character.
 
 Example usage:
     my_rectangle = Rectangle(2, 4)
@@ -10,6 +8,7 @@ Example usage:
     print("Perimeter:", my_rectangle.perimeter())
     print(str(my_rectangle))
 """
+
 
 class Rectangle:
     """Defines a rectangle with width and height attributes."""
@@ -90,7 +89,7 @@ class Rectangle:
         """Creates a string representation of the rectangle using the `#` character.
 
         Returns:
-            str: The string representation of the rectangle, or an empty string if width or height is 0.
+            str: The string representation of the if width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
