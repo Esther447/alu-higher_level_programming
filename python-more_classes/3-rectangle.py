@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This moduincludes a __str__ method to print the rectangle using the `#` character.
+This modui to print the rectangle using the `#` character.
 
 Example usage:
     my_rectangle = Rectangle(2, 4)
