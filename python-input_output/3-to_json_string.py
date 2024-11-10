@@ -9,5 +9,18 @@ corresponding Python object.
 import json
 
 def from_json_string(my_str):
-    """Returns a Python object represented by a JSON string."""
+    """
+    Converts a JSON string into a Python object.
+
+    Args:
+        my_str (str): A JSON-formatted string.
+
+    Returns:
+        object: A Python object represented by the JSON string, such as a
+                list, dictionary, integer, or string.
+
+    Example:
+        >>> from_json_string('[1, 2, 3]')
+        [1, 2, 3]
+    """ 
     return json.loads(my_str)
