@@ -10,17 +10,5 @@ import json
 
 def from_json_string(my_str):
     """
-    Converts a JSON string into a Python object.
-
-    Args:
-        my_str (str): A JSON-formatted string.
-
-    Returns:
-        object: A Python object represented by the JSON string, such as a
-                list, dictionary, integer, or string.
-
-    Example:
-        >>> from_json_string('[1, 2, 3]')
-        [1, 2, 3]
-    """ 
+    Converts a JSON string into a Python object.""" 
     return json.loads(my_str)
