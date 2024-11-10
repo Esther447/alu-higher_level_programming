@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 class Student:
       """
-    A class that defines a Student with attributes: first_name, last_name, and age.
-    """
+    A class that defines a Student with attributes: first_name, last_name, age.
+      """
     def __init__(self, first_name, last_name, age):
         """
         Initializes the Student instance with the provided values.
