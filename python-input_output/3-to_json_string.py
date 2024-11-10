@@ -2,7 +2,7 @@
 """
 This module provides a function to convert a JSON string into a Python data structure.
 
-The from_json_string function takes a JSON string as input and returns the
+The 'from_json_string' function takes a JSON string as input and returns the
 corresponding Python object.
 """
 
