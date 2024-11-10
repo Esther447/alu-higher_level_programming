@@ -1,14 +1,8 @@
 #!/usr/bin/python3
-"""
-This module provides a function to convert a JSON string into a Python data structure.
-
-The 'from_json_string' function takes a JSON string as input and returns the
-corresponding Python object.
-"""
-
+"""This module defines a string-to-JSON function"""
 import json
 
-def from_json_string(my_str):
-    """
-    Converts a JSON string into a Python object.""" 
-    return json.loads(my_str)
+
+def to_json_string(my_obj):
+    """Returns the JSON representation of a string object"""
+    return json.dumps(my_obj)
