@@ -1,2 +1,2 @@
-..This command will display all list of databases
+-- Show all databases present in the MySQL server
 SHOW DATABASES;
