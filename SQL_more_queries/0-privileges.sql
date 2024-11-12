@@ -1,11 +1,11 @@
--- a script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server (in localhost).
+-- Step 1: Create users if they do not exist
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost';
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
 
-SHOW GRANTS FOR 'user_0d_1'@'localhost';
-SHOW GRANTS FOR 'user_0d_2'@'localhost';
+-- Step 2: Grant only the specific privileges expected (instead of ALL PRIVILEGES)
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO 'user_0d_1'@'localhost';
 
--- Step 2: Grant privileges to the users if necessary
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO 'user_0d_2'@'localhost';
 
 -- Step 3: Show privileges for each user
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
