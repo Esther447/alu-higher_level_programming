@@ -1,12 +1,10 @@
--- Step 1: Revoke all privileges from both users to start fresh
-REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'user_0d_1'@'localhost';
-REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'user_0d_2'@'localhost';
+-- Step 1: Create users if they don't exist
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'password';
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'password';
 
--- Step 2: Grant only the specific privileges expected (instead of ALL PRIVILEGES)
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO 'user_0d_1'@'localhost';
+-- Step 2: Grant specific privileges to each user
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';  -- This grants root-level access to user_0d_1
+GRANT SELECT, INSERT ON user_2_db.* TO 'user_0d_2'@'localhost';  -- Grants only SELECT and INSERT to user_0d_2 on user_2_db
 
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO 'user_0d_2'@'localhost';
-
--- Step 3: Show grants for each user to verify correct permissions
-SHOW GRANTS FOR 'user_0d_1'@'localhost';
-SHOW GRANTS FOR 'user_0d_2'@'localhost';
+-- Step 3: Ensure changes are applied
+FLUSH PRIVILEGES;
