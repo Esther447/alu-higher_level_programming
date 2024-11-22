@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module takes a URL as input, sends a request to the URL, and displays the val.
+This module takes URL as input, sends request to the URL, and displays the val.
 """
 import urllib.request
 import sys
