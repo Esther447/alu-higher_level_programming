@@ -11,4 +11,4 @@ if __nmae__ == "__main__":
 
     with urllib.request.urlopen(req) as response:
         x_request_id = response.headers.get("X-request-Id)
-        print(x_request-id)
+        print(x_request_id)
