@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 This module takes a URL as an argument, sends a request to the URL, and displays the body of  the response (decoded in UTF-8).
+
+If an HTTP error occurs, it prints 'Error code:' followed by the HTTP status code.
 """
 
 
