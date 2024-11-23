@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This module sends a POST request to a given URL with an email parameter
+This module sends a POST request to a given URL with an email parameter and dispplays the body of the respondse (decoded in UTF-8).
 """
+
+
 import sys
 import urllib.request
 import urllib.parse
