@@ -1,20 +1,19 @@
 #!/usr/bin/python3
-"""I documented"""
+"""I documented you"""
 
-
-import sys
 import urllib.request
-impoort urllib.error
+import urllib.error
+import sys
 
-
-if __main__ == "__main__":
+if __name__ == '__main__':
+    """"Documented"""
     url = sys.argv[1]
-    
-
+    req = urllib.request.Request(url)
     try:
-        #send the request and display the response body
-        with urllib.request.urlopen(url) as response:
-            print(response.read().decode("utf-8"))
+        with urllib.request.urlopen(req) as response:
+            content = response.read()
+            print("{}".format(content.decode("utf-8")))
     except urllib.error.HTTPError as e:
-       #Handle HTTPError and print the error code
-       print(f"Error code: {e.code}"
+        print("Error code: {}".format(e.code))
+    except urllib.error.URLError as e:
+        print(e.reason)
