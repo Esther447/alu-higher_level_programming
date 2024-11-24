@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """I did it very well"""
-
-import requests
+mport requests
 
 
 if __name__ == "__main__":
