@@ -2,7 +2,7 @@
 """
 A script that:
 - Takes in a letter
-- Sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter
+- Sends a POST request to http://0.0.0.0:5000/search
 - Displays the id and name from the JSON response if available
 """
 import sys
@@ -17,13 +17,13 @@ if __name__ == "__main__":
         # Send POST request
         response = requests.post("http://0.0.0.0:5000/search_user", data=payload)
         # Parse JSON response
-        json_response = response.json()
+        response = response.json()
 
         # Check if JSON is empty
-        if json_response == {}:
+        if response == {}:
             print("No result")
         else:
-            print("[{}] {}".format(json_response.get("id"), json_response.get("name")))
+            print("[{}] {}".format(response.get("id"), response.get("name")))
     except ValueError:
         # If the response body is not valid JSON
         print("Not a valid JSON")
