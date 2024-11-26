@@ -1,4 +1,5 @@
-s module contains the function `add_integer` for adding two numbers.
+#!/usr/bin/python3
+"""This module contains the function `add_integer` for adding two numbers.
 """
 
 def add_integer(a, b=98):
