@@ -15,9 +15,9 @@ if __name__ == "__main__":
 
     try:
         # Send POST request
-        response = requests.post("http://0.0.0.0:5000/search_user", data=payload)
+        r = requests.post("http://0.0.0.0:5000/search_user", data=payload)
         # Parse JSON response
-        response = response.json()
+        response = r.json()
 
         # Check if JSON is empty
         if response == {}:
