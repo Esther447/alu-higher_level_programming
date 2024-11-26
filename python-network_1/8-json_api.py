@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     try:
         # Send POST request
-        resp = requests.post("http://0.0.0.0:5000/search_user", data=payload)
+        response = requests.post("http://0.0.0.0:5000/search_us", data=payload)
         # Parse JSON response
         response = response.json()
 
