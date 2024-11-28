@@ -20,7 +20,7 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is zero.
         ValueError: If div is infinity or NaN.
     """
-    # Check if arguments are provided
+    # Check for missing arguments
     if matrix is None or div is None:
         raise TypeError("matrix_divided() missing required arguments 'matrix' and/or 'div'")
 
@@ -41,7 +41,7 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
 
     # Check for special floating-point values (inf, nan)
-    if div == float('inf') or div == float('-inf') or div != div:  # div != div checks for NaN
+    if div == float('inf') or div == float('-inf') or div != div:
         raise ValueError("div must be a finite number")
 
     # Check if div is zero
