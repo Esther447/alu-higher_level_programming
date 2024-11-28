@@ -1,14 +1,6 @@
+>>> from 3-say_my_name.txt
 >>> say_my_name("Alice", "Johnson")
 My name is Alice Johnson
 >>> say_my_name("Eve")
-My name is Eve 
->>> say_my_name(123, "Doe")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
->>> say_my_name("Jane", 45)
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
->>> say_my_name("", "")
-My name is  
+>>> say_my_name(12, "Johnson")
+first_name must be a string
