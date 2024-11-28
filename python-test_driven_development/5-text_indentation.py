@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module composed by a function that prints 2 new lines after".?:? characters"""
+"""Module composed by a fn prints 2 new lines after".?:? characters"""
+
 
 def text_indentation(text):
     """ Function that prints 2 lines after ".?:" characters
@@ -15,12 +16,12 @@ def text_indentation(text):
 
 
     """
-  
+
     if type(text) is not str:
         raise TypeError("text must be a string")
 
 
-    s = text[:]
+   s = text[:]
 
     for d in ".?:":
         list_text = s.split(d)
