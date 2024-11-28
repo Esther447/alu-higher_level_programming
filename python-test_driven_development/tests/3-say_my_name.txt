@@ -1,6 +1,4 @@
->>> from 3-say_my_name.txt
->>> say_my_name("Alice", "Johnson")
-My name is Alice Johnson
->>> say_my_name("Eve")
->>> say_my_name(12, "Johnson")
-first_name must be a string
+My name is John Smith
+My name is Walter White
+My name is Bob
+First_name must be a string
