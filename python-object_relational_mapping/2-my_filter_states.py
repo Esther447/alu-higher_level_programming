@@ -1,42 +1,25 @@
 #!/usr/bin/python3
-"""
-Displays all values in the states table of hbtn_0e_0_usa
-where name matches the argument.
-"""
+"""Displays all values inthe states where name matche arg from the hbtn_0e_0_usa"""
+if __name__ ="__main__":
+"""Access to the database and get the states from the database"""
 
-import MySQLdb
-import sys
+    import MYSQLdb
+    import sys
+ 
+    user = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    arg = sys.argv[4]
 
-
-if __name__ == "__main__":    # Get MySQL credentials, database name, and state name from command-line arguments
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name = sys.argv[4]
-
-    # Connect to the MySQL server
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
-    )
-
-    # Create a cursor object to interact with the database
+    db = MySQLdb.connect(host="localhost", user=user, port=3306,
+                         passwd=password, db=db_name)
     cursor = db.cursor()
 
-    # Use format to include the state name in the query
-    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(state_name)
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM states \
+                WHERE name LIKE BINARY '{}'".format(arg))
+    rows = cursor.fetchall()
 
-    # Fetch all rows from the executed query
-    states = cursor.fetchall()
-
-    # Print each row in the desired format
-    for state in states:
-        print(state)
-
-    # Close the cursor and database connection
+    for i in rows:
+        print(i)
     cursor.close()
     db.close()
