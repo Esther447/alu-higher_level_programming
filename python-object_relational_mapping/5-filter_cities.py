@@ -4,11 +4,13 @@ Lists all cities of a state in the database 'hbtn_0e_4_usa'
  safe from SQL injection.
 """
 
-import MYSQLbd
 import sys
 
 
 if __name__ == "__main__":
+    MYSQLdb = __import__('MSQLdb')
+
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     db_name = sys.argv[3]
