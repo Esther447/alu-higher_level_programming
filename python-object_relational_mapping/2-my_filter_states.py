@@ -1,25 +1,20 @@
 #!/usr/bin/python3
-"""Displays all values inthe states where name matche arg from the hbtn_0e_0_usa"""
-if __name__ ="__main__":
-"""Access to the database and get the states from the database"""
+"""Display all values in the states"""
 
-    import MYSQLdb
-    import sys
- 
-    user = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-    arg = sys.argv[4]
 
-    db = MySQLdb.connect(host="localhost", user=user, port=3306,
-                         passwd=password, db=db_name)
-    cursor = db.cursor()
+import sys
+import MYSQLdb
 
-    cursor.execute("SELECT * FROM states \
-                WHERE name LIKE BINARY '{}'".format(arg))
-    rows = cursor.fetchall()
 
-    for i in rows:
-        print(i)
-    cursor.close()
-    db.close()
+if __name__ == "__main__":
+    conn = MYSQLdb.connect(
+        user=sys.argv[1],
+        password=sys.argv[2],
+        db=sys.argv[3],
+        host="localhost",
+        port=33306
+    )
+    cursor = conn.cursor()
+    sql = """SELECT * FROM states
+        WHERE name LIKE BINARY '{}'
+        ORDER BY id ASC """.format(sys.argv[4])
