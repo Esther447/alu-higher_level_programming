@@ -1,31 +1,29 @@
 #!/usr/bin/python3
 """
-Lists all State objects containing the letter 'a' from the database hbtn_0e_6_usa.
+    This scripts prints the all states
+    which contains letter a
+    from the database 'hbtn_0e_6_usa'.
 """
-import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
 
 if __name__ == "__main__":
-    # Retrieve command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+    """ Get state the first state
+        from the database
+    """
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    import sys
+    from model_state import State, Base
 
-    # Create an engine to connect to the MySQL server
-    engine = create_engine(
-        f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}',
-        pool_pre_ping=True
-    )
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
-    # Create a session to interact with the database
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query the database for all State objects containing the letter 'a'
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    result = session.query(State).filter(State.name.like('%a%'))
 
-    # Limit the number of results for easier testing
-    for state in states[:10]:  # Show only the first 10 states
-        print(f"{state.id}: {state.name}")
+    if result is not None:
+        for i in result:
+            print(i)
+
+    session.close()
