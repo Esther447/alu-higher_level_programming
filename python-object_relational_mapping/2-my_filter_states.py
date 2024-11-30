@@ -2,7 +2,7 @@
 """
 Script that takes in arguments and displays all values in the
 states table of a database where the name matches the given argument.
-It uses the MySQLdb module and prevents SQL injection.
+It uses the MySQLdb module and constructs the query using format.
 """
 
 import sys
@@ -25,13 +25,13 @@ if __name__ == "__main__":
         )
         cursor = conn.cursor()
 
-        # Use a parameterized query to prevent SQL injection
+        # Construct the query using format
         query = """
         SELECT * FROM states
-        WHERE name = %s
+        WHERE name LIKE BINARY '{}'
         ORDER BY id ASC
-        """
-        cursor.execute(query, (sys.argv[4],))
+        """.format(sys.argv[4])
+        cursor.execute(query)
 
         # Fetch and display results
         results = cursor.fetchall()
