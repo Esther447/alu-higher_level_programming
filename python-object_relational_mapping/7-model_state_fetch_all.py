@@ -1,4 +1,4 @@
-#!/usr/bi/python3
+#!/usr/bin/python3
 """
 Lists all State objects from the database htbn_0e_6_usa"""
 
