@@ -1,49 +1,20 @@
 #!/usr/bin/python3
 """
-Lists all cities of a state in the database 'hbtn_0e_4_usa'
- safe from SQL injection.
+Program prints out all the cities of a state
 """
 
+
 import sys
+import MySQLdb
 
+if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
+                         db=sys.argv[3], port=3306)
 
-if __name__ == "__main__":
-    MYSQLdb = __import__('MSQLdb')
+    cursor = db.cursor()
+    cursor.execute("SELECT cities.id, cities.name, states.name \
+    FROM cities JOIN states ON cities.state_id = states.id \
+    WHERE states.name = '{}';".format(sys.argv[4]))
+    states = cursor.fetchall()
 
-
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
-
-
-    db = MYSQLdb.connect(
-        host="localhost",
-        port=mysql_password,
-        password=mysql_password,
-        db=db_name
-     )
-
-
-
-     cur = db.cursor()
-    
-
-     querry = """
-          SELECT cotoes.name
-          FROM cities
-          JOIN states ON cities.state_id = states.id
-          WHERE states.name = %s
-          ORDER BY cities.id ASC
-     """
-     cur execute(query, (state_name,))
-
-
-     cities = cur.fetchall()
-
-
-     print(", ".join(city[0] for city in cities))
-
-
-     cur.close()
-     db.close()
+    print(", ".join([state[1] for state in states]))
