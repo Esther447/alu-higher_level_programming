@@ -1,0 +1,14 @@
+" ============================================================================     
+" Netrw Directory Listing                                        (netrw v149)
+"   /alu-higher_level_programming/python-almost_a_circle/models/__pycache__
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.ob
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+" ============================================================================
+../
+./
+__init__.cpython-310.pyc*
+base.cpython-310.pyc*
+rectangle.cpython-310.pyc*
+square.cpython-310.pyc*
+.swp
