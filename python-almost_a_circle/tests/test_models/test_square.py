@@ -109,6 +109,27 @@ class TestSquare(unittest.TestCase):
         s1.update(**{'id': 89})
         self.assertEqual(s1.id, 89)
 
+        s1.update(**{'id': 89, 'size': 1})
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+
+        s1.update(**{'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+
+        s1.update(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
+        self.assertEqual(s1.id, 89)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        self.assertEqual(s1.y, 3)
+
+    def test_create(self):
+        """Test the functions in square"""
+
+        s1 = Square.create(**{'id': 89})
+        self.assertEqual(s1.id, 89)
+
         s1 = Square.create(**{'id': 89, 'size': 1})
         self.assertEqual(s1.id, 89)
         self.assertEqual(s1.size, 1)
@@ -142,6 +163,11 @@ class TestSquare(unittest.TestCase):
             self.assertEqual(file.read(), '[]')
 
         Square.save_to_file([])
+        with open("Square.json") as file:
+            self.assertEqual(file.read(), '[]')
+            self.assertEqual(type(file.read()), str)
+
+        Square.save_to_file([Square(1)])
         with open("Square.json") as file:
             self.assertEqual(file.read(),
                              '[{"id": 1, "size": 1, "x": 0, "y": 0}]')

@@ -142,6 +142,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 3)
+
+        r1.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
         self.assertEqual(r1.y, 4)
 
     def test_create(self):

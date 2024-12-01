@@ -37,7 +37,7 @@ class TestBase(TestCase):
         with open("Square.json") as file:
             self.assertEqual(file.read(), '[]')
 
-Square.save_to_file([])
+        Square.save_to_file([])
         with open("Square.json") as file:
             self.assertEqual(file.read(), '[]')
             self.assertEqual(type(file.read()), str)
@@ -62,7 +62,7 @@ Square.save_to_file([])
         Rectangle.save_to_file([Rectangle(2, 3)])
         with open("Rectangle.json") as file:
             self.assertEqual(file.read(),
-                              '[{"id": 1, "width": 2, '
+                             '[{"id": 1, "width": 2, '
                              '"height": 3, "x": 0, "y": 0}]')
 
     def test_from_json_string(self):
