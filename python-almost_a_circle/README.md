@@ -1,1 +1,1 @@
-project of python - Almost a circle
+almost circle directory
