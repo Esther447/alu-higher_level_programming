@@ -2,6 +2,7 @@
 
 exports.converter = function (base) {
   return function (number) {
-    return (number === 0) ? '0' : (exports.converter(base)(Math.floor(number / base)) + (number % base).toString(base);
+    if (number === 0) return '0';
+    return exports.converter(base)(Math.floor(number / base)) + (number % base).toString(base);
   };
 };
