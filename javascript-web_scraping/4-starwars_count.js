@@ -17,13 +17,20 @@ request(apiUrl, (error, response, body) => {
 
   try {
     const data = JSON.parse(body);
+    if (!data.results) {
+      console.error('Invalid API response format');
+      return;
+    }
+
     const films = data.results;
+    const wedgeId = '18'; // Wedge Antilles' character ID
+
     const wedgeCount = films.filter(movie =>
-      movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
+      movie.characters.some(url => url.includes(`/${wedgeId}`))
     ).length;
 
     console.log(wedgeCount);
-  } catch (error) { // ✅ Corrected variable name from `err` to `error`
+  } catch (error) {
     console.error('Error parsing JSON:', error);
   }
 });
