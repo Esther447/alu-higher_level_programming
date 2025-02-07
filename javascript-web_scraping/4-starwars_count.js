@@ -11,26 +11,23 @@ if (!apiUrl) {
 
 request(apiUrl, (error, response, body) => {
   if (error) {
-    console.error(error);
+    console.error('Error fetching API:', error);
     return;
   }
 
   try {
-    const data = JSON.parse(body);
-    if (!data.results) {
-      console.error('Invalid API response format');
-      return;
-    }
+    const films = JSON.parse(body).results;
+    const characterId = '18'; // Wedge Antilles character ID
+    let count = 0;
 
-    const films = data.results;
-    const wedgeId = '18'; // Wedge Antilles' character ID
+    films.forEach(film => {
+      if (film.characters.some(url => url.includes(`/people/${characterId}/`))) {
+        count++;
+      }
+    });
 
-    const wedgeCount = films.filter(movie =>
-      movie.characters.some(url => url.includes(`/${wedgeId}`))
-    ).length;
-
-    console.log(wedgeCount);
-  } catch (error) {
-    console.error('Error parsing JSON:', error);
+    console.log(count);
+  } catch (err) {
+    console.error('Error parsing JSON:', err);
   }
 });
